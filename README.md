@@ -46,10 +46,6 @@ Sobe em `http://localhost:5173`.
 5. Cada resultado é salvo com número de versão — o histórico completo fica disponível na Dashboard
 6. Ao atualizar as vontades (adicionar/remover), um novo questionário + nova recomendação (nova versão) refletem o "Norte" atualizado, sem apagar o anterior
 
-## Por que ficou assim (e o que evitei fazer agora)
 
-**Por que Groq e não a varredura em tempo real na web que você mencionou originalmente?**
-Buscar "opiniões de psicólogos" na internet a cada requisição seria lento, caro e difícil de tornar consistente — os resultados variam a cada busca e é difícil garantir que o conteúdo encontrado seja confiável. Em vez disso, fixei o framework psicológico (valores, motivação, urgência x importância) diretamente no prompt do sistema, curado uma vez, e deixei a IA aplicar esse framework aos dados da pessoa. É mais previsível, mais barato e mais fácil de testar/depurar. Se no futuro você quiser buscas reais, dá pra adicionar uma etapa de web search antes da chamada à IA — mas comece validando o framework fixo primeiro.
 
-**Por que não JWT "de verdade"?**
-Um token opaco salvo no banco (com expiração) resolve o mesmo problema com muito menos superfície de erro do que configurar Spring Security + assinatura JWT + refresh tokens. Para uma v1 que ainda está sendo validada, isso é deliberado — não é economia de qualidade, é adiar complexidade que só vale a pena depois que o produto provar que vai pra frente.
+
